@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+        when { tag "v*" }
         stage('Build') {
             steps {
                 echo 'Building..'
