@@ -15,6 +15,7 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when { tag "v1." }
             steps {
                 echo 'Deploying..'
             }
