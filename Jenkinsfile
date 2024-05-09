@@ -17,6 +17,11 @@ pipeline {
                 echo 'Smoke Testing...'
             }
         }
+        stage('IntegrationTest') {
+            steps {
+                echo 'Integration Testing...'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying when tags...'
