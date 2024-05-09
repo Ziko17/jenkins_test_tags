@@ -4,20 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building...'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing...'
             }
         }
         stage('Deploy') {
-            when {
-                buildingTag()
-            }
             steps {
-                echo 'Deploying when tags..'
+                echo 'Deploying when tags...'
             }
         }
     }
