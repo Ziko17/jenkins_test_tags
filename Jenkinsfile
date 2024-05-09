@@ -3,21 +3,23 @@ pipeline {
 
     stages {
         stage('Build') {
+            when { tag "v*" }
             steps {
                 echo 'Building..'
-                echo 'Building 2..'
-                echo 'Building 3..'
             }
         }
         stage('Test') {
+            when { tag "v*" }
             steps {
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
-            when { tag "v1." }
+            when {
+                buildingTag()
+            }
             steps {
-                echo 'Deploying..'
+                echo 'Deploying when tags..'
             }
         }
     }
