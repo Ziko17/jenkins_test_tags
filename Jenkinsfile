@@ -3,13 +3,11 @@ pipeline {
 
     stages {
         stage('Build') {
-            when { tag "v*" }
             steps {
                 echo 'Building..'
             }
         }
         stage('Test') {
-            when { tag "v*" }
             steps {
                 echo 'Testing..'
             }
